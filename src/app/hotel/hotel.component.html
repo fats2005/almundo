@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+      <div class="images">
+        <img [src]="'assets/images/hotels/'+hotel.image" class="img-responsive" />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-5">
+      <div class="product-info">
+        <h3 class="product-name">{{hotel.name}}</h3>
+        <div class="product-stars">
+          <span *ngFor="let star of stars" class="icon icon-star"></span>
+        </div>
+        <div class="product-amenities">
+          <span *ngFor="let amenitie of hotel.amenities" class="icon icon-{{amenitie}}"></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="price-container ">
+        <p>Precio por noche por habitación</p>
+        <p class="price">
+          <span class="currency">ARS</span>
+          <span class="value">{{ hotel.price | number:'0.0-0' }}</span>
+        </p>
+        <button *ngIf="type=='resume'" class="btn btn-primary btn-lg see-hotel" routerLink="/hotels/{{hotel.id}}">Ver hotel</button>
+        <button *ngIf="type=='page'" class="btn btn-primary btn-lg see-hotel">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>

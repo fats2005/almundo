@@ -1,0 +1,72 @@
+@import "~variables.scss";
+
+.card {
+  border: none;
+  border-radius: 0;
+  background-color: inherit;
+  .card-header,
+  .card-body {
+    background-color: #fff;
+    border: none;
+    border-radius: inherit;
+    font-size: 1rem;
+    margin-bottom: 4px;
+    padding: 0.5rem 1rem;
+    position: relative;
+
+    .sorter {
+      background: none;
+      border: none;
+      color: $text-title-color;
+      cursor: pointer;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      &:active,
+      &:focus {
+        outline: none;
+      }
+      .correct_position {
+        position: relative;
+        top: -5px;
+      }
+    }
+
+    h4 {
+      .icon {
+        height: 1rem;
+        width: 1rem;
+        margin-right: 4px;
+        background-color: $text-title-color;
+        position: relative;
+        bottom: -3px;
+      }
+      color: $text-title-color;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+
+  .card-header {
+    font-weight: bold;
+    .sorter {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-header {
+    text-align: center;
+    color: $text-title-color;
+    .sorter {
+      display: initial !important;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .card-header .sorter {
+    display: initial !important;
+  }
+}

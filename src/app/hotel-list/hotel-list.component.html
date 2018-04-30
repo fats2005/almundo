@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-lg-3">
+    <app-filter-list></app-filter-list>
+  </div>
+  <div class="col-lg-9">
+    <app-hotel *ngFor="let hotel of hotels" [hotel]="hotel" [type]="'resume'"></app-hotel>
+  </div>
+</div>

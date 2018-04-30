@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">
+    Filtros
+    <button class="sorter" (click)="show_filters = !show_filters">
+      <fa-icon class="{{show_filters ? '' : 'correct_position'}}" icon="{{show_filters ? 'sort-up' : 'sort-down'}}"></fa-icon>
+    </button>
+  </div>
+  <div *ngIf="show_filters">
+    <div class="card-body">
+      <h4><span class="icon icon-search"></span> Nombre de hotel</h4>
+      <button class="sorter" (click)="show_filter_name = !show_filter_name">
+        <fa-icon class="{{show_filter_name ? '' : 'correct_position'}}" icon="{{show_filter_name ? 'sort-up' : 'sort-down'}}"></fa-icon>
+      </button>
+      <app-filter-name *ngIf="show_filter_name"></app-filter-name>
+    </div>
+    <div class="card-body">
+      <h4><span class="icon icon-star"></span> Estrellas</h4>
+      <button class="sorter" (click)="show_filter_stars = !show_filter_stars">
+        <fa-icon class="{{show_filter_stars ? '' : 'correct_position'}}" icon="{{show_filter_stars ? 'sort-up' : 'sort-down'}}"></fa-icon>
+      </button>
+      <app-filter-stars *ngIf="show_filter_stars"></app-filter-stars>
+    </div>
+  </div>
+</div>

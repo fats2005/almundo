@@ -1,0 +1,74 @@
+@import "~variables.scss";
+.card {
+  border: none;
+  border-radius: 0;
+  padding: 8px !important;
+  margin-bottom: 1rem;
+  .col-md-5 {
+    padding-left: 0px;
+  }
+  .images {
+    img {
+      width: 100%;
+    }
+  }
+
+  .product-info {
+    h3 {
+      color: $text-title-color;
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+    .product-stars {
+      margin-bottom: 0.5rem;
+      .icon {
+        background-color: #fdba12;
+      }
+    }
+    .product-amenities {
+      .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .price-container {
+    border-left: 1px dashed #cccccc;
+    font-size: 0.9rem;
+    height: 100%;
+    text-align: center;
+    p {
+      margin-bottom: 0.4rem;
+    }
+    .price {
+      color: $second-color;
+      font-size: 1.6rem;
+      .value {
+        font-size: 2.2rem;
+        font-weight: bold;
+        position: relative;
+        top: 0.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .col-md-5 {
+    padding-left: 15px !important;
+  }
+  .product-info {
+    margin-top: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .price-container {
+    border-left: 0px !important;
+    border-top: 1px dashed #cccccc;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    .btn {
+      width: 100%;
+    }
+  }
+}

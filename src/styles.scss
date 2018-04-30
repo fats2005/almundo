@@ -1,0 +1,74 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~variables.scss";
+body {
+  background-color: #f4f4f4;
+  color: #444;
+  padding-top: 6rem;
+}
+
+
+/* Preparing icons */
+
+// For more icons:
+// 1. Add svg file in assets/icons/your_folder
+// 2. Add the icon name to the list
+$icons-filters-list: ('search', 'star');
+$icons-amenities-list: ( 'bathrobes',
+'bathtub',
+'beach-pool-facilities',
+'beach',
+'business-center',
+'children-club',
+'coffe-maker',
+'deep-soaking-bathtub',
+'fitness-center',
+'garden',
+'kitchen-facilities',
+'newspaper',
+'nightclub',
+'restaurant',
+'safety-box',
+'separate-bredroom',
+'sheets');
+
+.icon {
+  height: 1rem;
+  width: 1rem;
+  display: inline-block;
+  background-color: #444444;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  @each $icon in $icons-filters-list {
+    &.icon-#{$icon} {
+      -webkit-mask: url(assets/icons/filters/#{$icon}.svg) no-repeat 50% 50%;
+      mask: url(assets/icons/filters/#{$icon}.svg) no-repeat 50% 50%;
+    }
+  }
+
+  @each $icon in $icons-amenities-list {
+    &.icon-#{$icon} {
+      -webkit-mask: url(assets/icons/amenities/#{$icon}.svg) no-repeat 50% 50%;
+      mask: url(assets/icons/amenities/#{$icon}.svg) no-repeat 50% 50%;
+    }
+  }
+}
+
+.btn {
+  border: none;
+
+  padding: 0.3rem 2rem;
+}
+
+.btn-primary {
+  background-color: $main-color;
+  -webkit-box-shadow: 0px 2px 0px 0px $main-color-dark;
+  -moz-box-shadow: 0px 2px 0px 0px $main-color-dark;
+  box-shadow: 0px 2px 0px 0px $main-color-dark;
+  &:hover {
+    background-color: $main-color-dark;
+  }
+  &:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem $second-color;
+    box-shadow: 0 0 0 0.2rem $second-color;
+  }
+}
