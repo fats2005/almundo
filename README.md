@@ -1,14 +1,29 @@
-# Almundo
+# Almundo Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was created by Alejandro Tunaroza
 
-## Development server
+## Instructions
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+IMPORTANT: Go to https://github.com/fats2005/almundo-backend and follow the instruccions there. After finish comeback here!!!
 
-## Code scaffolding
+1. Clone the repository
+```bash
+$git clone https://github.com/fats2005/almundo-frontend.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+2. Enter to the project
+```bash
+$cd almundo-frontend
+```
+
+3. Install dependencies
+```bash
+$npm install
+```
+4. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+$ng serve -o
+```
 
 ## Build
 
@@ -22,6 +37,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
