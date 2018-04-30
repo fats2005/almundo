@@ -23,6 +23,8 @@ import { HotelPageComponent } from './hotel-page/hotel-page.component'
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { FormsModule } from "@angular/forms";
+
 
 library.add(fas, far);
 
@@ -40,6 +42,7 @@ library.add(fas, far);
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,

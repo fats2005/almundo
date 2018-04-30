@@ -8,6 +8,7 @@ import { Hotel } from '../models/hotel'
 import { HOTELS } from '../mock-hotels'
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 
 @Injectable()
@@ -15,10 +16,34 @@ export class HotelService {
 
   private apiUrl = 'http://localhost:3000/api/Hotels'; // URL to web api
 
+  private filterNameKeywordSource = new BehaviorSubject < string > ("");
+  currentFilterNameKeyword = this.filterNameKeywordSource.asObservable();
+
   constructor(private http: HttpClient) {}
 
-  getHotels(): Observable < Hotel[] > {
-    return this.http.get < Hotel[] > (this.apiUrl)
+  /** GET hotels from the server */
+  /** Filteres implemented in the same method */
+  getHotels(filterNameKeyword: string): Observable < Hotel[] > {
+
+    //Preparing the filter
+    // See (https://loopback.io/doc/en/lb2/Where-filter.html)
+
+
+    //TODO: Implement stars filters
+    let filter: Object = {
+      "where": {
+        "and": [{
+            "name": { "like": "%" + filterNameKeyword + "%" }
+          }
+          /*,
+          {
+            "stars": 2
+          }*/
+        ]
+      }
+    }
+
+    return this.http.get < Hotel[] > (this.apiUrl + "?filter=" + encodeURI(JSON.stringify(filter)))
       .pipe(
         catchError(this.handleError('getHotels', []))
       );
@@ -29,6 +54,10 @@ export class HotelService {
     return this.http.get < Hotel > (url).pipe(
       catchError(this.handleError < Hotel > (`getHero id=${id}`))
     );
+  }
+
+  changeFilterNameKeyword(message: string) {
+    this.filterNameKeywordSource.next(message)
   }
 
   /**

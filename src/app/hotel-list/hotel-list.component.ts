@@ -10,16 +10,20 @@ import { HotelService } from '../services/hotel.service';
 export class HotelListComponent implements OnInit {
 
   hotels: Hotel[];
+  filterNameKeyword: string;
 
   constructor(private hotelService: HotelService) {}
 
   ngOnInit() {
-    this.getHotels();
+    //this.getHotels();
+    this.hotelService.currentFilterNameKeyword.subscribe(filterNameKeyword => this.getHotels(filterNameKeyword))
   }
 
-  getHotels(): void {
-    this.hotelService.getHotels()
+  getHotels(filterNameKeyword: string): void {
+    console.log('getHotels hotel-list')
+    this.hotelService.getHotels(filterNameKeyword)
       .subscribe(hotels => this.hotels = hotels);
   }
+
 
 }

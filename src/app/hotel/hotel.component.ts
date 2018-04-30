@@ -19,7 +19,6 @@ export class HotelComponent implements OnInit {
   }
 
   updateStars() {
-    console.log(this.hotel)
     this.stars = Array(this.hotel['stars']).fill("");
   }
 

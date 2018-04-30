@@ -1,48 +1,48 @@
-<form class="form">
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      Todas las estrellas
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      <span class="icon icon-star"></span>
-      <span class="icon icon-star"></span>
-    </label>
-  </div>
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-    <label class="form-check-label" for="defaultCheck1">
-      <span class="icon icon-star"></span>
-    </label>
-  </div>
-</form>
+<!--<form class="form">-->
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="all_stars" [(ngModel)]="all_stars" (ngModelChange)="onChangeAll()">
+  <label class="form-check-label" for="all_stars">
+    Todas las estrellas
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="five_star" [(ngModel)]="stars[4].selected" (ngModelChange)="onChangeStars(stars[4].stars - 1)">
+  <label class="form-check-label" for="five_star">
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="four_star" [(ngModel)]="stars[3].selected" (ngModelChange)="onChangeStars(stars[3].stars - 1)">
+  <label class="form-check-label" for="four_star">
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="three_star" [(ngModel)]="stars[2].selected" (ngModelChange)="onChangeStars(stars[2].stars - 1)">
+  <label class="form-check-label " for="three_star">
+    <span class="icon icon-star "></span>
+    <span class="icon icon-star "></span>
+    <span class="icon icon-star "></span>
+  </label>
+</div>
+<div class="form-check ">
+  <input class="form-check-input" type="checkbox" value="" id="two_star" [(ngModel)]="stars[1].selected" (ngModelChange)="onChangeStars(stars[1].stars - 1)">
+  <label class="form-check-label" for="two_star">
+    <span class="icon icon-star"></span>
+    <span class="icon icon-star"></span>
+  </label>
+</div>
+<div class="form-check ">
+  <input class="form-check-input" type="checkbox" value="" id="one_star" [(ngModel)]="stars[0].selected" (ngModelChange)="onChangeStars(stars[0].stars - 1)">
+  <label class="form-check-label" for="one_star">
+    <span class="icon icon-star"></span>
+  </label>
+</div>
+<!--</form>-->
